@@ -1,0 +1,1 @@
+S = Npm.require('string');

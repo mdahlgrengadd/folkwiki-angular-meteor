@@ -1,0 +1,38 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+
+<ion-tabs class="tabs-striped tabs-bottom tabs-background-dark tabs-color-light" ng-cloak>
+   <div plangular class="" style="position:fixed; right: 10px">
+    <button
+      ng-if="player.playing"
+      ng-click="pause()"
+      class="button button-small black bg-red vhs-bottom">
+      <svg class="icon geomicon" data-icon="pause" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor;top:-.0625em"><path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z "></path></svg>
+      Pause
+    </button>
+  </div>
+  <ion-tab title="Favorites" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab2/login">
+    <ion-nav-view name="tab2-login"></ion-nav-view>
+  </ion-tab>
+ 
+  <ion-tab title="Recents" icon-off="ion-ios-clock-outline" icon-on="ion-ios-clock" href="#/tab2/register">
+    <ion-nav-view name="tab2-register"></ion-nav-view>
+  </ion-tab>
+ 
+  <!--ion-tab title="Profile" icon-off="ion-ios-person-outline" icon-on="ion-ios-person" ng-click="SayHallo()" href="#/tab/profile">
+    <ion-nav-view name="tab-profile"></ion-nav-view>
+  </ion-tab>
+ 
+  <ion-tab title="Chats" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats">
+    <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab-->
+ 
+  <ion-tab title="Settings" icon-off="ion-ios-cog-outline" icon-on="ion-ios-cog" href="#/tab2/settings">
+    <ion-nav-view name="tab2-settings"></ion-nav-view>
+  </ion-tab>
+ 
+</ion-tabs>

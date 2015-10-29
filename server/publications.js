@@ -21,6 +21,28 @@ Meteor.publish('productsSearch', function(query) {
   return Products.search(query);
 });
 
+Meteor.publish("myLikes", function() {
+    //returns undefined if not logged in so check if logged in first
+    if(this.userId) {
+      console.log("publish");
+      console.log(this.userId);
+      //console.log(Meteor);
+        return Like.collection.find({userId:this.userId});
+        //var user is the same info as would be given in Meteor.user();
+    }
+});
+
+
+Meteor.publish("myRepertoires", function() {
+    //returns undefined if not logged in so check if logged in first
+    if(this.userId) {
+      console.log("publish reps");
+      console.log(this.userId);
+      //console.log(Meteor);
+        return RepertoireModel.collection.find({userId:this.userId});
+        //var user is the same info as would be given in Meteor.user();
+    }
+});
 /*Meteor.publishComposite('product', function(_id) {
   return {
     find: function() {

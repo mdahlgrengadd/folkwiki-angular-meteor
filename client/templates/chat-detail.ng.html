@@ -4,12 +4,107 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{chat.name}}">
+  <nav mfb-menu position="tr" effect="zoomin" label="hover here"
+     active-icon="ion-edit" resting-icon="ion-plus-round"
+     toggling-method="click">
+  <button mfb-button icon="paper-airplane" label="menu item"></button>
+  <a mfb-button label="{{button.label}}" icon="{{button.icon}}" ng-repeat="button in buttons"></a>
+</nav>
+
+
+
+<ion-view view-title="Score">
+  <ion-nav-buttons side="left">
+<button class="button button-icon ion-navicon" ng-click="toggleLeft()" ng-hide="$exposeAside.active"></button>
+   </ion-nav-buttons>
   <ion-content class="padding">
     <!--img ng-src="{{chat.face}}" style="width: 64px; height: 64px"-->
-    <p><!--{{windowWidth}}-->
+    <!--p>
+      {{chat.rhythm}}
+      {{chat.origin}}
+      {{chat.key}}
+      {{chat.transcription}}
+      isliked = {{isLiked()}}
+    </p-->
 
-    </p>
-    <div  id="ABCNotation"   ></div>
+<my-polymer-element ng-click="buttonAction()" >
+<div class="red bg-dark">
+<div plangular="{{SoundcloudURL}}" class="p2 mb3 flex flex-center bg-darken-2 rounded">
+  <button ng-click="playPause()"
+    title="Play/Pause"
+    class="flex-none h2 mr2 button button-transparent button-grow rounded">
+    <svg ng-if="player.playing !== track.src" class="icon geomicon" data-icon="play" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor"><path d="M4 4 L28 16 L4 28 z "></path></svg>
+    <svg ng-if="player.playing === track.src" class="icon geomicon" data-icon="pause" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor"><path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z "></path></svg>
+  </button>
+  <div class="flex-auto">
+    <h3 class="h4 m0">{{track.user.username}}</h3>
+    <h2 class="h4 caps m0">{{track.title}}</h2>
+          {{chat.rhythm}}
+      {{chat.origin}}
+      {{chat.key}}
+      {{chat.transcription}}
+      isliked = {{isLiked()}}
+    <progress
+      class="progress"
+      ng-click="seek($event)"
+      ng-value="currentTime / duration || 0">
+      {{ currentTime / duration }}
+    </progress>
+  </div>
+</div>
+</div>
+</my-polymer-element>
+
+<!--div  id="ABCNotation"   ></div-->
+
+          
+
+        <div class="parent">
+            <div class="directive"  data-ng-if="enabled" data-width="info.width" data-height="info.height" data-rate="info.rate" data-docid="{{docid}}">
+                <abcjs class="abcdata" data-abc-src="{{chat.tagline}}" data-width="{{info.width}}">
+                
+                </abcjs>    
+            </div>
+        </div>
+
   </ion-content>
 </ion-view>
+
+
+<script id="rep-add-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Choose a repertoire</h1>
+<div class="button button-clear" ng-click="closeModal()"><span class="icon ion-close"></span></div>
+    </ion-header-bar>
+    <ion-content>
+          <div class="list">
+            <label class="item item-input">
+              <span class="input-label">New repertoire</span>
+              <input type="text" ng-model="repertoire_name">
+            </label>
+
+          </div>
+          <div class="padding">
+            <button class="button button-block button-positive" ng-click="createRepertoire(repertoire_name)">
+              Create {{repertoire_name}}
+            </button>
+
+          </div> 
+
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="rep in myRepertoires" type="item-text-wrap" href="">
+
+        <h2>{{rep.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+
+
+    </ion-content>
+  </ion-modal-view>
+</script>

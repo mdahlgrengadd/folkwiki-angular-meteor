@@ -18,7 +18,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-angular
 driftyco:ionic
 socialize:likeable
 socialize:user-model
@@ -32,4 +31,11 @@ mdahlgren:abc-js
 angularui:angular-ui-router
 accounts-password
 accounts-ui
+socialize:linkable-model
+angular
+mdahlgren:ng-material-floating-button
+mdahlgren:plangular.js
 urigo:angular-blaze-template
+mdahlgren:ng-polymer-elements.js
+mdahlgren:soundcloud.js
+mdahlgren:ng-abc.js

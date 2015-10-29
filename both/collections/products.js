@@ -12,14 +12,8 @@ Likable.prototype._collection = new Meteor.Collection("products", {
 
 //expose the collection on the Meteor global
 //Meteor.products = Likable.prototype._collection;
-
-
-ProductsModel = LikeableModel.extendAndSetupCollection("products")
+ProductsModel = myLikeableModel.extendAndSetupCollection("products")
 Products = Meteor.products;//ProductsModel.collection; //Likable.prototype._collection;
-
-
-
-
 
 //Products = new Mongo.Collection('products');
 
@@ -191,14 +185,6 @@ Meteor.products.allow({
         return model.checkOwnership()
     }
 });
-
-LinkableModel.methods({
-  "product": function (){
-    return Meteor.products.findOne(this.linkedObjectId);
-  }
-
-});
-
 
 ProductsModel.methods({
     "owner": function(){

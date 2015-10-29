@@ -8,6 +8,7 @@
 angular
   .module('starter')
   .run(run);
+  //.config(config);
 
 function run ($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,3 +25,8 @@ function run ($ionicPlatform) {
     }
   });
 }
+/*
+function config (plangularConfig) {
+        plangularConfig.clientId = '49cd4ed62f0460f069bd40f5e2d7988e';
+    };
+    */

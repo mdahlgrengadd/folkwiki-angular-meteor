@@ -1,7 +1,21 @@
-<ion-view view-title="Chats">
+<ion-view view-title="Tunes">
+
+  <ion-nav-buttons side="left">
+<button class="button button-icon ion-navicon" ng-click="toggleLeft()" ng-hide="$exposeAside.active"></button>
+   </ion-nav-buttons>
   <ion-content>
+  <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search">
+  </label>
+  <button class="button button-clear">
+    Cancel
+  </button>
+</div>
+
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat._id}}">
+      <ion-item class="item-remove-animate  item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat._id}}">
         <!--img ng-src="{{chat.face}}"-->
         <h2>{{chat.name}}</h2>
         <!--p>{{chat.lastText}}</p-->

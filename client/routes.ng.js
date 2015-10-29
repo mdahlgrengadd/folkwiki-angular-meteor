@@ -8,8 +8,19 @@ function config ($stateProvider, $urlRouterProvider) {
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: 'client/templates/tabs.ng.html'
+      templateUrl: 'client/templates/tabs.ng.html',
+      controller: 'TabCtrl as vm'
+
     })
+
+    .state('tab2', {
+      url: '/tab2',
+      abstract: true,
+      templateUrl: 'client/templates/tabs2.ng.html',
+      controller: 'TabCtrl'
+
+    })
+
  
     .state('tab.chats', {
       url: '/chats',
@@ -20,21 +31,32 @@ function config ($stateProvider, $urlRouterProvider) {
         }
       }
     })
-      .state('tab.login', {
+
+    .state('tab.profile', {
+      url: '/profile',
+      views: {
+        'tab-profile': {
+          templateUrl: 'client/templates/profile.ng.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+
+      .state('tab2.login', {
       url: '/login',
       views: {
-        'tab-login': {
-          templateUrl: 'client/users/views/login.ng.html',
-          controller: 'LoginCtrl as vm'
+        'tab2-login': {
+          templateUrl: 'client/users/views/sidebar.ng.html',
+          controller: 'LoginCtrl as vmx'
         }
       },
 
     })
 
-    .state('tab.register', {
+    .state('tab2.register', {
       url: '/register',
       views: {
-        'tab-register': {
+        'tab2-register': {
           templateUrl: 'client/users/views/register.ng.html',
           controller: 'RegisterCtrl as vm'
         }
@@ -61,6 +83,16 @@ function config ($stateProvider, $urlRouterProvider) {
       }
     })
 
+    .state('tab.profile-detail', {
+      url: '/profile/:chatId',
+      views: {
+        'tab-profile': {
+          templateUrl: 'client/templates/chat-detail.ng.html',
+          controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
 
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
@@ -73,5 +105,5 @@ function config ($stateProvider, $urlRouterProvider) {
     });
  
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/chats');
+  //$urlRouterProvider.otherwise('/tab/chats');
 }

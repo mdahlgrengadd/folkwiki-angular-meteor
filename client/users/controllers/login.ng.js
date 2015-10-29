@@ -1,23 +1,23 @@
 angular.module("starter").controller("LoginCtrl", ['$meteor', '$state',
   function ($meteor, $state) {
-    var vm = this;
- 
-    vm.credentials = {
+    var vmx = this;
+    vmx.abcData = $meteor.collection(Products)[0].tagline;
+    vmx.credentials = {
       email: '',
       password: ''
     };
  
-    vm.error = '';
+    vmx.error = '';
  
-    vm.login = function () {
-      console.log(vm.credentials);
+    vmx.login = function () {
+      console.log(vmx.credentials);
 
-      $meteor.loginWithPassword(vm.credentials.email, vm.credentials.password).then(
+      $meteor.loginWithPassword(vmx.credentials.email, vmx.credentials.password).then(
         function () {
           $state.go('parties');
         },
         function (err) {
-          vm.error = 'Login error - ' + err;
+          vmx.error = 'Login error - ' + err;
         }
       );
     };

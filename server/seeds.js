@@ -1,5 +1,8 @@
 Meteor.startup(function() {
   Products.remove({});
+  Like.collection.remove({});
+
+
   Products.allow({
       insert: function () {
           return true;

@@ -58,6 +58,11 @@ logging@1.0.8
 matb33:collection-hooks@0.7.15
 mdahlgren:abc-js@1.0.0
 mdahlgren:abc-js-server@1.0.0
+mdahlgren:ng-abc.js@0.0.1
+mdahlgren:ng-material-floating-button@0.6.1
+mdahlgren:ng-polymer-elements.js@0.0.1
+mdahlgren:plangular.js@0.0.1
+mdahlgren:soundcloud.js@0.0.1
 mdahlgren:string.js@0.0.1
 meteor@1.1.9
 meteor-base@1.0.1

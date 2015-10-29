@@ -1,0 +1,21 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/mdahlgrengadd/folkwiki-angular-meteor",
+  "authors": [
+    "mdahlgrengadd <mdahlgrengadd@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}

@@ -247,7 +247,7 @@ angular.module('starter')
     .factory('sizeWatcher', ['$interval', function($interval) {
         return function (element, rate) {
             var self = this;
-            (self.update = function() { self.dimensions = [element.offsetWidth, element.offsetHeight]; })();
+            (self.update = function() { self.dimensions = [$(element).parent()[0].clientWidth, element.offsetHeight];})();
             self.group = [function() { return self.dimensions[0]; }, function() { return self.dimensions[1]; }];
             self.monitor = $interval(self.update, rate);
             self.cancel = function() { $interval.cancel(self.monitor); };

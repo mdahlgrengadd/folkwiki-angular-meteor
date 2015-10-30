@@ -47,14 +47,14 @@ ABCJS.Plugin = function() {
 
 ABCJS.Plugin.prototype.init = function(jq) {
     this.$ = jq;
-    var body = jq("body");
+    //var body = jq("body");
   this.errors="";
-  var elems = this.getABCContainingElements(this.$("body"));
+  //var elems = this.getABCContainingElements(this.$("body"));
   var self = this;
-  var divs = elems.map(function(i,elem){
-      console.log("DONT AUTO CONVERT ABC ELEMENTS")
+  //var divs = elems.map(function(i,elem){
+      console.log("DONT AUTO CONVERT ABC ELEMENTS");
       //return self.convertToDivs(elem);
-    });
+    //});
   //this.auto_render = (divs.size()<=this.auto_render_threshold);
   //divs.each(function(i,elem){
   //    self.render(elem,self.$(elem).data("abctext"));
@@ -285,7 +285,7 @@ ABCJS.Plugin.prototype.renderMartin = function (contextnode, abcstring) {
 
 ABCJS.Plugin.prototype.render_small_screen = function (contextnode, abcstring) {
   var abcdiv = this.$("<div class='"+this.render_classname+"'></div>");
-    $(".abcrendered").remove(); // clear old render
+    //$(".abcrendered").remove(); // clear old render
 
   if (this.render_before) {
     contextnode.before(abcdiv);
@@ -351,7 +351,7 @@ ABCJS.Plugin.prototype.render_small_screen = function (contextnode, abcstring) {
 
     var doPrint = function() {
   try {
-    var paper = Raphael(abcdiv.get(0), 800, 400);
+    var paper = Raphael(contextnode.get(0), 800, 400);
     var engraver_controller = new ABCJS.write.EngraverController(paper,self.render_options);
     engraver_controller.engraveABC(tune);
   } catch (ex) { // f*** internet explorer doesn't like innerHTML in weird situations
@@ -363,7 +363,7 @@ ABCJS.Plugin.prototype.render_small_screen = function (contextnode, abcstring) {
     //engraver_controller.engraveABC(tune);
     engraver_controller = new ABCJS.write.Printer(paper);
     engraver_controller.printABC(tune);
-    contextnode.html(abcdiv);
+    //contextnode.html(abcdiv);
     /*if (self.render_before) {
       $(contextnode).before(abcdiv);
     } else {

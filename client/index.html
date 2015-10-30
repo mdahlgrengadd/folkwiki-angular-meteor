@@ -13,7 +13,7 @@
     <ion-side-menus>
     
       <ion-side-menu-content>
-    <ion-nav-bar class="bar bar-header bar-calm">
+    <ion-nav-bar class="bar bar-header bar-dark">
 
       <ion-nav-back-button>
       </ion-nav-back-button>
@@ -69,17 +69,29 @@
 
 </div>
         </ion-content>
-            <!--ion-footer-bar class="bar-dark">
+            <ion-footer-bar class="bar">
+                   <div plangular class="" style="position:fixed; right: 10px">
+                    <button
+                      ng-if="player.playing"
+                      ng-click="pause()"
+                      class="button button-small black bg-red vhs-bottom">
+                      <svg class="icon geomicon" data-icon="pause" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor;top:-.0625em"><path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z "></path></svg>
+                      Pause
+                    </button>
+                  </div>
+
+            
               <div class="button-bar" style="left:0;right:0;margin:0; width: 100%;position: fixed;">
  
-                <a class="button button-icon icon ion-home"></a>
-                <a class="button button-icon icon ion-settings"></a>
-                <a class="button button-icon icon ion-star"></a>
+                <!--a class="button button-icon icon ion-home"></a>
+                <a class="button button-icon icon ion-settings"></a-->
+
+
 
               </div>
               
 
-          </ion-footer-bar-->
+          </ion-footer-bar>
       </ion-side-menu>
       
     </ion-side-menus>

@@ -4,16 +4,7 @@ Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
 
-<ion-tabs class="tabs-striped tabs-bottom tabs-background-dark tabs-color-light" ng-cloak>
-   <div plangular class="" style="position:fixed; right: 10px">
-    <button
-      ng-if="player.playing"
-      ng-click="pause()"
-      class="button button-small black bg-red vhs-bottom">
-      <svg class="icon geomicon" data-icon="pause" viewBox="0 0 32 32" width="32" height="32" style="fill:currentcolor;top:-.0625em"><path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z "></path></svg>
-      Pause
-    </button>
-  </div>
+<ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light" ng-cloak>
  
   <!--ion-tab title="Favorites" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/login">
     <ion-nav-view name="tab-login"></ion-nav-view>
